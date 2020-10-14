@@ -1,0 +1,13 @@
+<h1>Hello, <%= @user.name %></h1>
+
+<p>
+  You are signed in as: '<%= @user.name %>'<br/>
+  Your user ID is: <%= @user.id %>
+</p>
+
+<h3>Your Events:</h3>
+<ul>
+  <% @user.hosted_events.each do |event| %>
+      <li><%= link_to event.name, event_path(event) %></li>
+  <% end %>
+</ul>
