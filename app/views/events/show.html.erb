@@ -18,3 +18,7 @@
     <li><%= a.name %></li>
   <% end %>
 </ul>
+
+<% if session[:current_user_id] %>
+  <%= link_to 'RSVP', "#{@event.id}/rsvp", method: :post %>
+<% end %>
