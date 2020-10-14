@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     @event = @current_user.hosted_events.build(event_params)
 
     if @event.save
+      @event.attendees << @current_user
       flash.notice = 'Event Created Succesfully'
       redirect_to event_path(@event)
     else

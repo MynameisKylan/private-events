@@ -20,6 +20,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def destroy
+    session[:current_user_id] = nil
+    redirect_to events_path
+  end
+
   private
 
   def user_params

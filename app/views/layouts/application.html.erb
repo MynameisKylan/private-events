@@ -16,15 +16,8 @@
       </p>
     <% end %>
 
-    <% if session[:current_user_id] %>
-      <% user = User.find(session[:current_user_id]) %>
-      <p>
-        You are signed in as <%= user.name %>
-      </p>
-      <p>
-        <%= link_to 'My Profile', user_path(user) %>
-      </p>
-    <% end %>
+    <%= render 'layouts/navbar' %>
+    
 
     <%= yield %>
   </body>
